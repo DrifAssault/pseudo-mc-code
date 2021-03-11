@@ -11,7 +11,7 @@ seed = int(input("Cactus seed: "))
 bound = int(input("Bound (if you wanna have no bound, put 0): "))
 i = int(input("x chunk coord?"))
 j = int(input("y chunk coord?"))
-
+temp = 0
 def nextInt(bound):
     seed = mod(str((25214903917 * seed) + 11), (2**48))
     if (bound == 0):
@@ -28,9 +28,12 @@ def nextInt(bound):
 k = 16*i
 l = 16*j
 for sth in range(0, ?):
-    x = k + seed.nextInt(16) + 8;
-    y = seed.nextInt(128);
-    z = l + seed.nextInt(16) + 8;
+    temp = nextInt(1)
+    x = k + nextInt(16) + 8;
+    temp = nextInt(1)
+    y = nextInt(128);
+    temp = nextInt(1)
+    z = l + nextInt(16) + 8;
     new_cactus = generate_cactus(seed, x, y, z)
 
 def generate_cactus(seed_random, x, y, z):
@@ -38,9 +41,10 @@ def generate_cactus(seed_random, x, y, z):
         attempt_x = x + nextInt(8) - nextInt(8);
         attempt_y = y + nextInt(4) - nextInt(4);
         attempt_z = z + nextInt(8) - nextInt(8);
-        if (not air_block(attempt_x, attempt_y, attempt_z)) pass
+#        if (not air_block(attempt_x, attempt_y, attempt_z)) pass
         height = 1 + nextInt(nextInt(3) + 1)
-        for y_offset in range(0, height):
+#        for y_offset in range(0, height):
             # canBlockStay only valid with normal cactus conditions (on sand, no obstructions, etc.)
-            if (canBlockStay(attempt_x, attempt_y + y_offset, attempt_z))
-                setBlock(attempt_x, attempt_y + y_offset, attempt_z, Block.cactus)
+#            if (canBlockStay(attempt_x, attempt_y + y_offset, attempt_z))
+#                setBlock(attempt_x, attempt_y + y_offset, attempt_z, Block.cactus)
+        print("coord: " + str(attempt_x) + " " + str(attempt_y) + " " + str(attempt_z) + " --- height: " + str(height))
