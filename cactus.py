@@ -5,17 +5,15 @@ seed = int(input("Cactus seed: "))
 
 def nextInt(bound):
     seed = (25214903917 * seed + 11) % (2**48)
-    if (bound == None) {return seed >> 16}
-    elif (math.ceil(Log2(bound)) == math.floor(Log2(bound))){
-        return seed >> (31 - math.floor(Log2(bound)))
-    }
+    if (bound == None): return seed >> 16
+    elif (math.ceil(Log2(bound)) == math.floor(Log2(bound))): return seed >> (31 - math.floor(Log2(bound)))
 
 i = int(input("x chunk coord?"))
 j = int(input("y chunk coord?"))
 # i, j is seemingly chunk coord
 k = 16*i
 l = 16*j
-for sth in range(0, 1):
+for sth in range(0, ?):
     x = k + seed.nextInt(16) + 8;
     y = seed.nextInt(128);
     z = l + seed.nextInt(16) + 8;
